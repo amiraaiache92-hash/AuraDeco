@@ -1,0 +1,262 @@
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Déco – Design intérieur</title>
+	
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --beige: #e8dfd2;
+            --green: #7a8b71;
+            --anthracite: #2f2f2f;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+            background: var(--beige);
+            color: var(--anthracite);
+        }
+
+        header {
+            background: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--white);
+            text-shadow: 0 0 10px #000;
+        }
+
+        header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 60px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: var(--anthracite);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: var(--anthracite);
+            border-left: 5px solid var(--green);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        .services-grid,
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: var(--anthracite);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+		        .section p {
+            font-size: 22px;
+            line-height: 1.8;
+        }
+		.gallery img {
+            width: 130px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 6px;
+        }  
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="home">
+        <h1>Aura Déco</h1>
+        <p>Create the mood you live in</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#about US">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Réalisations</a>
+        <a href="#contact">Contact</a>
+		<a href="#avis clients">Avis clients</a>
+    </nav>
+
+    <!-- ABOUT US -->
+    <section class="section" id="about">
+        <h2>À propos</h2>
+        <p>
+            Aura Déco est une agence de décoration intérieure spécialisée dans la création d’espaces élégants, fonctionnels et harmonieux.
+Nous accompagnons aussi bien les particuliers que les professionnels dans la transformation de leurs maisons, appartements, bureaux, cafés ou espaces commerciaux.
+
+Notre mission est simple : révéler le potentiel de chaque espace et créer des ambiances qui reflètent votre style, vos besoins et votre personnalité.
+Chaque projet est pensé dans les moindres détails, avec une attention particulière portée à l’équilibre des couleurs, des matières et de la lumière.
+
+Grâce à une approche moderne du design, et à une veille constante sur les tendances, Aura Déco propose des solutions créatives, raffinées et adaptées au mode de vie d’aujourd’hui.
+Nous croyons qu’un bel intérieur a le pouvoir d’améliorer le confort, l’humeur et le bien-être au quotidien.
+        </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <h2>Nos Services</h2>
+
+        <div class="services-grid">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg" onclick="openLightbox(this)" >
+                <h3>Décoration maisons</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" onclick="openLightbox(this)">
+                <h3>Design d’appartements</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" onclick="openLightbox(this)">
+                <h3>Aménagement bureaux</h3>
+            </div>
+        </div>
+		<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+        <h2>Réalisations</h2>
+
+        <p>Voici une sélection de quelques projets réalisés par nous :</p>
+
+        <div class="portfolio-grid">
+            <div class="card"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"onclick="openLightbox(this)"></div>
+            <div class="card"><img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg"onclick="openLightbox(this)"></div>
+            <div class="card"><img src="https://images.pexels.com/photos/1082355/pexels-photo-1082355.jpeg"onclick="openLightbox(this)"></div>
+        </div>
+		<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+<section class="section" id="avis clients">
+    <h2>Avis de nos clients</h2>
+
+    <div style="display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:250px; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc;">
+            <p style="font-size:18px;">⭐⭐⭐⭐⭐</p>
+            <p>"Un travail magnifique, professionnel et très esthétique."</p>
+            <strong>- Mohammed</strong>
+        </div>
+
+        <div style="flex:1; min-width:250px; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc;">
+            <p style="font-size:18px;">⭐⭐⭐⭐⭐</p>
+            <p>"Aura Déco a transformé notre salon, on adore le résultat."</p>
+            <strong>- Ismahen</strong>
+        </div>
+
+        <div style="flex:1; min-width:250px; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc;">
+            <p style="font-size:18px;">⭐⭐⭐⭐⭐</p>
+            <p>"Service rapide, à l'écoute et très créatif."</p>
+            <strong>- nour el houda</strong>
+        </div>
+
+    </div>
+</section>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email : auradeco@gmail.com</p>
+        <p>Téléphone : +213 0554217898</p>
+        <p>Instagram : @AuraDeco</p>
+		<p>Tiktok : @AuraDeco.1</p>
+    </section>
+
+    <footer>
+        © 2025 Aura Déco – Tous droits réservés
+    </footer>
+<script>
+function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+</body>
+
+</html>
